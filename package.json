@@ -1,8 +1,11 @@
 {
-  "name": "brain-games",
-  "version": "1.0.0",
+  "name": "brain-gamesaam",
+  "version": "1.0.2",
   "description": "Console game for brain development",
   "main": "",
+  "bin": {
+    "brain-games": "./dist/bin/brain-games.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,6 +15,9 @@
     "@babel/cli": "^7.2.3",
     "@babel/node": "^7.2.2",
     "@babel/present-env": "^7.3.1"
-  }
-  "license": "ISC"
+  },
+  "license": "ISC",
+  "files": [
+    "dist"
+  ]
 }
