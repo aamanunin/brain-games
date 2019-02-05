@@ -2,7 +2,7 @@
   "name": "brain-gamesaam",
   "version": "1.0.10",
   "description": "Console game for brain development",
-  "main": "src/index.js",
+  "main": "",
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
   },
@@ -10,7 +10,14 @@
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build"
   },
+  "keywords": [
+    "brain",
+    "game"
+  ],
   "author": "Aleksandr Maniunin",
+  "dependencies": {
+
+  },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
@@ -26,8 +33,5 @@
   "license": "ISC",
   "files": [
     "dist"
-  ],
-  "dependencies": {
-
-  }
+  ]
 }
