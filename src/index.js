@@ -46,4 +46,8 @@ const gameEven = () => {
   }
 };
 
-export { greet, gameEven };
+const gameCalc = () => {
+
+};
+
+export { greet, gameEven, gameCalc };
