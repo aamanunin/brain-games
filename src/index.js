@@ -43,12 +43,9 @@ const questionCalc = () => {
   const x = getRandomInt(minNum, maxNum);
   const y = getRandomInt(minNum, maxNum);
   const operand = getRandomOperand();
-  console.log(operand);
   console.log(`Question: ${x} ${operand} ${y}`);
   const answer = readlineSync.question('Your answer: ');
   const correctAnswer = mathItUp[operand](x, y);
-  console.log(typeof answer);
-  console.log(typeof correctAnswer);
   if (Number(answer) === correctAnswer) {
     console.log('Correct!');
     return true;
