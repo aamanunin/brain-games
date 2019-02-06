@@ -1,16 +1,21 @@
 import readlineSync from 'readline-sync';
 
+const welcome = () => console.log('Welcome to the Brain Games!');
+
+const descriptionEven = () => console.log('Answer "yes" if number even otherwise answer "no".');
+
 const greet = () => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   return (name);
 };
 
-const question = (number) => {
+const questionEven = (number) => {
   console.log(`Question: ${number}`);
   const answer = readlineSync.question('Your answer: ');
+  const isEven = num => (num % 2 === 0);
   let correctAnswer = '';
-  if (number % 2 === 0) {
+  if (isEven(number)) {
     correctAnswer = 'yes';
   } else {
     correctAnswer = 'no';
@@ -23,23 +28,22 @@ const question = (number) => {
   return false;
 };
 
-const game = () => {
-  console.log('Welcome to the Brain Games!');
-  console.log('Answer "yes" if number even otherwise answer "no".');
+const gameEven = () => {
+  welcome();
+  descriptionEven();
   const name = greet();
-  if (question(15) === false) {
-    console.log(`Let's try again, ${name}!`);
-    return;
+  let round = 1;
+  const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+  const minNum = 1;
+  const maxNum = 100;
+  for (round; round <= 3; round += 1) {
+    if (questionEven(getRandomInt(minNum, maxNum))) {
+      if (round === 3) console.log(`Congratulations, ${name}!`);
+    } else {
+      console.log(`Let's try again, ${name}!`);
+      return;
+    }
   }
-  if (question(6) === false) {
-    console.log(`Let's try again, ${name}!`);
-    return;
-  }
-  if (question(7) === false) {
-    console.log(`Let's try again, ${name}!`);
-    return;
-  }
-  console.log(`Congratulations, ${name}!`);
 };
 
-export { greet, game };
+export { greet, gameEven };
