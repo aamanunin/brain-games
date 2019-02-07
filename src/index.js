@@ -1,7 +1,4 @@
 import readlineSync from 'readline-sync';
-import { descriptionEven, gameEven } from './games/even';
-import { descriptionCalc, gameCalc } from './games/calc';
-import { descriptionGcd, gameGcd } from './games/gcd';
 
 const roundMax = 3;
 
@@ -28,24 +25,12 @@ const play = (game) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-const runEven = () => {
+const runGame = (descriptionGame, game) => {
   welcome();
-  descriptionEven();
-  play(gameEven);
-};
-
-const runCalc = () => {
-  welcome();
-  descriptionCalc();
-  play(gameCalc);
-};
-
-const runGcd = () => {
-  welcome();
-  descriptionGcd();
-  play(gameGcd);
+  descriptionGame();
+  play(game);
 };
 
 export {
-  greet, getRandomInt, runEven, runCalc, runGcd,
+  greet, getRandomInt, runGame,
 };
