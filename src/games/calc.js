@@ -1,11 +1,35 @@
 import {
-  getRandomInt, getRandomOperand, mathItUp, minNum, maxNum,
+  getRandomInt,
 } from '..';
 import readlineSync from 'readline-sync';
+
+const minNum = 1;
+const maxNum = 100;
 
 const descriptionCalc = () => {
   console.log('What is the result of the expression?');
   console.log();
+};
+
+const getRandomOperand = () => {
+  let operand;
+  const randomSwitch = getRandomInt(1, 3);
+  switch (randomSwitch) {
+    case 1: operand = '+';
+      break;
+    case 2: operand = '-';
+      break;
+    case 3: operand = '*';
+      break;
+    default: break;
+  }
+  return operand;
+};
+
+const mathItUp = {
+  '+': (x, y) => x + y,
+  '-': (x, y) => x - y,
+  '*': (x, y) => x * y,
 };
 
 const gameCalc = () => {

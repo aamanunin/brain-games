@@ -1,7 +1,11 @@
 import {
-  getRandomInt, isEven, minNum, maxNum,
+  getRandomInt,
 } from '..';
 import readlineSync from 'readline-sync';
+
+const minNum = 1;
+const maxNum = 100;
+const isEven = num => (num % 2 === 0);
 
 const descriptionEven = () => {
   console.log('Answer "yes" if number even otherwise answer "no".');

@@ -3,16 +3,7 @@ import { descriptionEven, gameEven } from './games/even';
 import { descriptionCalc, gameCalc } from './games/calc';
 import { descriptionGcd, gameGcd } from './games/gcd';
 
-// если вспомогательные функцию вынесу с index.js в отдельный файл, лучше будет?
-
 const roundMax = 3;
-const minNum = 1;
-const maxNum = 100;
-const mathItUp = {
-  '+': (x, y) => x + y,
-  '-': (x, y) => x - y,
-  '*': (x, y) => x * y,
-};
 
 const welcome = () => console.log('Welcome to the Brain Games!');
 
@@ -24,35 +15,6 @@ const greet = () => {
 };
 
 const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-
-const isEven = num => (num % 2 === 0);
-
-const getRandomOperand = () => {
-  let operand;
-  const randomSwitch = getRandomInt(1, 3);
-  switch (randomSwitch) {
-    case 1: operand = '+';
-      break;
-    case 2: operand = '-';
-      break;
-    case 3: operand = '*';
-      break;
-    default: break;
-  }
-  return operand;
-};
-
-const getGcd = (x, y) => {
-  let a = x;
-  let b = y;
-  if (a === 0 || b === 0) return a + b;
-  if (a > b) {
-    a %= b;
-  } else {
-    b %= a;
-  }
-  return (getGcd(a, b));
-};
 
 const play = (game) => {
   const name = greet();
@@ -85,7 +47,5 @@ const runGcd = () => {
 };
 
 export {
-  greet, getRandomInt, isEven, minNum, maxNum,
-  runEven, runCalc, getRandomOperand, mathItUp,
-  runGcd, getGcd,
+  greet, getRandomInt, runEven, runCalc, runGcd,
 };
