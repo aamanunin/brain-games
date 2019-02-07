@@ -4,4 +4,7 @@ Install and run brain-even:
 [![asciicast](https://asciinema.org/a/IYNtdjtsscDYU8eut1PpT7C46.svg)](https://asciinema.org/a/IYNtdjtsscDYU8eut1PpT7C46)
 
 Install and run brain-calc:  
-[![asciicast](https://asciinema.org/a/XIo77Bg1HycyiOIye1k0GBDVR.svg)](https://asciinema.org/a/XIo77Bg1HycyiOIye1k0GBDVR)
+[![asciicast](https://asciinema.org/a/XIo77Bg1HycyiOIye1k0GBDVR.svg)](https://asciinema.org/a/XIo77Bg1HycyiOIye1k0GBDVR)  
+
+Install and run brain-gcd:  
+[![asciicast](https://asciinema.org/a/Sj8c8N4BP3PTAGquqyUHrsNH9.svg)](https://asciinema.org/a/Sj8c8N4BP3PTAGquqyUHrsNH9)  
