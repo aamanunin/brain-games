@@ -1,8 +1,7 @@
 import readlineSync from 'readline-sync';
-// начал делать вторую игру точь в точь как первую
-// сразу стало видно что повторяется, а какая логика уникальная
-// почти все переработал
-// Вроде все замечания поправил.
+import gameEven from './games/even';
+import gameCalc from './games/calc';
+
 const roundMax = 3;
 
 const greet = () => {
@@ -32,45 +31,16 @@ const getRandomOperand = () => {
   return operand;
 };
 
-// этот синтаксис в инете откапал, это дальше в теории будет?
 const mathItUp = {
   '+': (x, y) => x + y,
   '-': (x, y) => x - y,
   '*': (x, y) => x * y,
 };
 
-const questionCalc = () => {
-  const x = getRandomInt(minNum, maxNum);
-  const y = getRandomInt(minNum, maxNum);
-  const operand = getRandomOperand();
-  console.log(`Question: ${x} ${operand} ${y}`);
-  const answer = readlineSync.question('Your answer: ');
-  const correctAnswer = mathItUp[operand](x, y);
-  if (Number(answer) === correctAnswer) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  return false;
-};
-
-const questionEven = () => {
-  const number = getRandomInt(minNum, maxNum);
-  console.log(`Question: ${number}`);
-  const answer = readlineSync.question('Your answer: ');
-  const correctAnswer = isEven(number) ? 'yes' : 'no';
-  if (answer === correctAnswer) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  return false;
-};
-
-const game = (question) => {
+const play = (game) => {
   const name = greet();
   for (let round = 1; round <= roundMax; round += 1) {
-    const resultCurrentQuestion = question();
+    const resultCurrentQuestion = game();
     if (!resultCurrentQuestion) {
       console.log(`Let's try again, ${name}!`);
       return;
@@ -79,18 +49,19 @@ const game = (question) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-const gameEven = () => {
+const runEven = () => {
   console.log('Welcome to the Brain Games!');
   console.log('Answer "yes" if number even otherwise answer "no".');
   console.log();
-  game(questionEven);
+  play(gameEven);
 };
 
-const gameCalc = () => {
+const runCalc = () => {
   console.log('Welcome to the Brain Games!');
   console.log('What is the result of the expression?');
   console.log();
-  game(questionCalc);
+  play(gameCalc);
 };
-
-export { greet, gameEven, gameCalc };
+export {
+  greet, getRandomInt, isEven, minNum, maxNum, runEven, runCalc, getRandomOperand, mathItUp,
+};
