@@ -1,15 +1,9 @@
 import {
   getRandomInt,
 } from '..';
-import readlineSync from 'readline-sync';
 
 const minNum = 1;
 const maxNum = 100;
-
-const descriptionCalc = () => {
-  console.log('What is the result of the expression?');
-  console.log();
-};
 
 const getRandomOperand = () => {
   let operand;
@@ -32,19 +26,17 @@ const mathItUp = {
   '*': (x, y) => x * y,
 };
 
+const getAnswer = (operand, x, y) => mathItUp[operand](x, y);
+
+const descriptionCalc = 'What is the result of the expression?';
+
 const gameCalc = () => {
   const x = getRandomInt(minNum, maxNum);
   const y = getRandomInt(minNum, maxNum);
   const operand = getRandomOperand();
-  console.log(`Question: ${x} ${operand} ${y}`);
-  const answer = readlineSync.question('Your answer: ');
-  const correctAnswer = mathItUp[operand](x, y);
-  if (Number(answer) === correctAnswer) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  return false;
+  const questionCalc = `${x} ${operand} ${y}`;
+  const correctAnswerCalc = String(getAnswer(operand, x, y));
+  return [questionCalc, correctAnswerCalc];
 };
 
 export { descriptionCalc, gameCalc };

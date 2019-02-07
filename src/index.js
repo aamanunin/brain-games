@@ -11,24 +11,29 @@ const greet = () => {
   return (name);
 };
 
+const writeDescription = (description) => {
+  console.log(description);
+  console.log();
+};
+
 const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-const play = (game) => {
+const runGame = (descriptionGame, questionGame) => {
+  welcome();
+  writeDescription(descriptionGame);
   const name = greet();
   for (let round = 1; round <= roundMax; round += 1) {
-    const resultCurrentQuestion = game();
-    if (!resultCurrentQuestion) {
+    const [question, correctAnswerGame] = questionGame();
+    console.log(`Question: ${question}`);
+    const answer = readlineSync.question('Your answer: ');
+    if (answer !== correctAnswerGame) {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswerGame}'.`);
       console.log(`Let's try again, ${name}!`);
       return;
     }
+    console.log('Correct!');
   }
   console.log(`Congratulations, ${name}!`);
-};
-
-const runGame = (descriptionGame, game) => {
-  welcome();
-  descriptionGame();
-  play(game);
 };
 
 export {
