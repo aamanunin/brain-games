@@ -3,6 +3,11 @@ import {
 } from '..';
 import readlineSync from 'readline-sync';
 
+const descriptionEven = () => {
+  console.log('Answer "yes" if number even otherwise answer "no".');
+  console.log();
+};
+
 const gameEven = () => {
   const question = getRandomInt(minNum, maxNum);
   console.log(`Question: ${question}`);
@@ -16,4 +21,4 @@ const gameEven = () => {
   return false;
 };
 
-export default gameEven;
+export { descriptionEven, gameEven };

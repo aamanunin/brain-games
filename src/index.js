@@ -1,8 +1,20 @@
 import readlineSync from 'readline-sync';
-import gameEven from './games/even';
-import gameCalc from './games/calc';
+import { descriptionEven, gameEven } from './games/even';
+import { descriptionCalc, gameCalc } from './games/calc';
+import { descriptionGcd, gameGcd } from './games/gcd';
+
+// если вспомогательные функцию вынесу с index.js в отдельный файл, лучше будет?
 
 const roundMax = 3;
+const minNum = 1;
+const maxNum = 100;
+const mathItUp = {
+  '+': (x, y) => x + y,
+  '-': (x, y) => x - y,
+  '*': (x, y) => x * y,
+};
+
+const welcome = () => console.log('Welcome to the Brain Games!');
 
 const greet = () => {
   const name = readlineSync.question('May I have your name? ');
@@ -11,9 +23,8 @@ const greet = () => {
   return (name);
 };
 
-const minNum = 1;
-const maxNum = 100;
 const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
 const isEven = num => (num % 2 === 0);
 
 const getRandomOperand = () => {
@@ -31,10 +42,16 @@ const getRandomOperand = () => {
   return operand;
 };
 
-const mathItUp = {
-  '+': (x, y) => x + y,
-  '-': (x, y) => x - y,
-  '*': (x, y) => x * y,
+const getGcd = (x, y) => {
+  let a = x;
+  let b = y;
+  if (a === 0 || b === 0) return a + b;
+  if (a > b) {
+    a %= b;
+  } else {
+    b %= a;
+  }
+  return (getGcd(a, b));
 };
 
 const play = (game) => {
@@ -50,18 +67,25 @@ const play = (game) => {
 };
 
 const runEven = () => {
-  console.log('Welcome to the Brain Games!');
-  console.log('Answer "yes" if number even otherwise answer "no".');
-  console.log();
+  welcome();
+  descriptionEven();
   play(gameEven);
 };
 
 const runCalc = () => {
-  console.log('Welcome to the Brain Games!');
-  console.log('What is the result of the expression?');
-  console.log();
+  welcome();
+  descriptionCalc();
   play(gameCalc);
 };
+
+const runGcd = () => {
+  welcome();
+  descriptionGcd();
+  play(gameGcd);
+};
+
 export {
-  greet, getRandomInt, isEven, minNum, maxNum, runEven, runCalc, getRandomOperand, mathItUp,
+  greet, getRandomInt, isEven, minNum, maxNum,
+  runEven, runCalc, getRandomOperand, mathItUp,
+  runGcd, getGcd,
 };
