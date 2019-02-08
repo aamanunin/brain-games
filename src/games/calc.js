@@ -1,5 +1,5 @@
 import runGame from '..';
-import getRandomInt from '../utils/random';
+import getRandomInt from '../random';
 
 const minNum = 1;
 const maxNum = 100;
@@ -33,11 +33,9 @@ const game = () => {
   const x = getRandomInt(minNum, maxNum);
   const y = getRandomInt(minNum, maxNum);
   const operand = getRandomOperand();
-  const questionCalc = `${x} ${operand} ${y}`;
-  const correctAnswerCalc = String(getAnswer(operand, x, y));
-  return [questionCalc, correctAnswerCalc];
+  const question = `${x} ${operand} ${y}`;
+  const correctAnswer = String(getAnswer(operand, x, y));
+  return [question, correctAnswer];
 };
 
-const play = () => runGame(description, game);
-
-export default play;
+export default () => runGame(description, game);

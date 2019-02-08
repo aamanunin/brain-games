@@ -1,19 +1,13 @@
 import runGame from '..';
-import getRandomInt from '../utils/random';
+import getRandomInt from '../random';
 
 const minNum = 1;
 const maxNum = 100;
 
 const getGcd = (x, y) => {
-  let a = x;
-  let b = y;
-  if (x === 0 || y === 0) return a + b;
-  if (a > b) {
-    a %= b;
-  } else {
-    b %= a;
-  }
-  return (getGcd(a, b));
+  if (x === 0 || y === 0) return x + y;
+  if (x > y) return getGcd(x % y, y);
+  return getGcd(x, y % x);
 };
 
 const description = 'Find the greatest common divisor of given numbers.';
@@ -21,11 +15,9 @@ const description = 'Find the greatest common divisor of given numbers.';
 const game = () => {
   const x = getRandomInt(minNum, maxNum);
   const y = getRandomInt(minNum, maxNum);
-  const questionGcd = ` ${x} ${y}`;
-  const correctAnswerGcd = String(getGcd(x, y));
-  return [questionGcd, correctAnswerGcd];
+  const question = ` ${x} ${y}`;
+  const correctAnswer = String(getGcd(x, y));
+  return [question, correctAnswer];
 };
 
-const play = () => runGame(description, game);
-
-export default play;
+export default () => runGame(description, game);

@@ -1,5 +1,5 @@
 import runGame from '..';
-import getRandomInt from '../utils/random';
+import getRandomInt from '../random';
 
 const minNum = 1;
 const maxNum = 100;
@@ -8,11 +8,9 @@ const isEven = num => (num % 2 === 0);
 const description = 'Answer "yes" if number even otherwise answer "no".';
 const game = () => {
   const randomNum = getRandomInt(minNum, maxNum);
-  const questionEven = String(randomNum);
-  const correctAnswerEven = isEven(randomNum) ? 'yes' : 'no';
-  return [questionEven, correctAnswerEven];
+  const question = String(randomNum);
+  const correctAnswer = isEven(randomNum) ? 'yes' : 'no';
+  return [question, correctAnswer];
 };
 
-const play = () => runGame(description, game);
-
-export default play;
+export default () => runGame(description, game);
