@@ -8,3 +8,6 @@ Install and run brain-calc:
 
 Install and run brain-gcd:  
 [![asciicast](https://asciinema.org/a/Sj8c8N4BP3PTAGquqyUHrsNH9.svg)](https://asciinema.org/a/Sj8c8N4BP3PTAGquqyUHrsNH9)  
+
+Install and run brain-gcd:  
+[![asciicast](https://asciinema.org/a/hxLUyzjK1oRYAKHMIzunVzL0T.svg)](https://asciinema.org/a/hxLUyzjK1oRYAKHMIzunVzL0T)

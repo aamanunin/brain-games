@@ -1,15 +1,28 @@
 import runGame from '..';
 import getRandomInt from '../random';
 
-const minNum = 1;
-const maxNum = 100;
-const isEven = num => (num % 2 === 0);
+const maxI = 9;
+const maxStartNum = 10;
+const maxStep = 10;
+const getHiddenI = () => getRandomInt(0, maxI);
+const getStartNum = () => getRandomInt(0, maxStartNum);
+const getStep = () => getRandomInt(1, maxStep);
 
-const description = 'Answer "yes" if number even otherwise answer "no".';
+const description = 'What number is missing in the progression?';
+
 const game = () => {
-  const randomNum = getRandomInt(minNum, maxNum);
-  const question = String(randomNum);
-  const correctAnswer = isEven(randomNum) ? 'yes' : 'no';
+  const startNum = getStartNum();
+  const step = getStep();
+  const hiddenI = getHiddenI();
+  let question = '';
+  for (let i = 0; i <= maxI; i += 1) {
+    if (i === hiddenI) {
+      question += String(',, ');
+    } else {
+      question += String(`${startNum + step * i} `);
+    }
+  }
+  const correctAnswer = String(startNum + step * hiddenI);
   return [question, correctAnswer];
 };
 
