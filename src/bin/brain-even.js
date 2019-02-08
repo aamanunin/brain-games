@@ -3,4 +3,3 @@
 import play from '../games/even';
 
 play();
-console.log('play');

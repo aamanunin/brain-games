@@ -38,6 +38,6 @@ const game = () => {
   return [questionCalc, correctAnswerCalc];
 };
 
-const play = runGame(description, game);
+const play = () => runGame(description, game);
 
 export default play;

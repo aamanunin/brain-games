@@ -26,6 +26,6 @@ const game = () => {
   return [questionGcd, correctAnswerGcd];
 };
 
-const play = runGame(description, game);
+const play = () => runGame(description, game);
 
 export default play;
