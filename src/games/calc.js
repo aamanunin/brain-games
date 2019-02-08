@@ -4,37 +4,29 @@ import getRandomInt from '../random';
 const minNum = 1;
 const maxNum = 100;
 
-const getRandomOperand = () => {
-  let operand;
-  const randomSwitch = getRandomInt(1, 3);
-  switch (randomSwitch) {
-    case 1: operand = '+';
-      break;
-    case 2: operand = '-';
-      break;
-    case 3: operand = '*';
-      break;
-    default: break;
-  }
-  return operand;
-};
-
-const mathItUp = {
-  '+': (x, y) => x + y,
-  '-': (x, y) => x - y,
-  '*': (x, y) => x * y,
-};
-
-const getAnswer = (operand, x, y) => mathItUp[operand](x, y);
-
 const description = 'What is the result of the expression?';
 
 const game = () => {
+  let question;
+  let correctAnswer;
   const x = getRandomInt(minNum, maxNum);
   const y = getRandomInt(minNum, maxNum);
-  const operand = getRandomOperand();
-  const question = `${x} ${operand} ${y}`;
-  const correctAnswer = String(getAnswer(operand, x, y));
+  const randomSwitch = getRandomInt(1, 3);
+  switch (randomSwitch) {
+    case 1:
+      question = `${x} + ${y}`;
+      correctAnswer = String(x + y);
+      break;
+    case 2:
+      question = `${x} - ${y}`;
+      correctAnswer = String(x - y);
+      break;
+    case 3:
+      question = `${x} / ${y}`;
+      correctAnswer = String(x / y);
+      break;
+    default: break;
+  }
   return [question, correctAnswer];
 };
 

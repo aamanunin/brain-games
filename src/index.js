@@ -16,16 +16,16 @@ const writeDescription = (description) => {
   console.log();
 };
 
-const runGame = (descriptionGame, game) => {
+const runGame = (description, game) => {
   welcome();
-  writeDescription(descriptionGame);
+  writeDescription(description);
   const name = greet();
   for (let round = 1; round <= roundMax; round += 1) {
-    const [question, correctAnswerGame] = game();
+    const [question, correctAnswer] = game();
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
-    if (answer !== correctAnswerGame) {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswerGame}'.`);
+    if (answer !== correctAnswer) {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
       return;
     }
