@@ -1,6 +1,5 @@
-import {
-  getRandomInt,
-} from '..';
+import runGame from '..';
+import getRandomInt from '../utils/random';
 
 const minNum = 1;
 const maxNum = 100;
@@ -17,9 +16,9 @@ const getGcd = (x, y) => {
   return (getGcd(a, b));
 };
 
-const descriptionGcd = 'Find the greatest common divisor of given numbers.';
+const description = 'Find the greatest common divisor of given numbers.';
 
-const gameGcd = () => {
+const game = () => {
   const x = getRandomInt(minNum, maxNum);
   const y = getRandomInt(minNum, maxNum);
   const questionGcd = ` ${x} ${y}`;
@@ -27,4 +26,6 @@ const gameGcd = () => {
   return [questionGcd, correctAnswerGcd];
 };
 
-export { descriptionGcd, gameGcd };
+const play = runGame(description, game);
+
+export default play;

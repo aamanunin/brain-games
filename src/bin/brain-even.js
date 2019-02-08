@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { runGame } from '..';
-import { descriptionEven, gameEven } from '../games/even';
+import play from '../games/even';
 
-runGame(descriptionEven, gameEven);
+play();
+console.log('play');

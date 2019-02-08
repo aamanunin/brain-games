@@ -16,14 +16,12 @@ const writeDescription = (description) => {
   console.log();
 };
 
-const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-
-const runGame = (descriptionGame, questionGame) => {
+const runGame = (descriptionGame, game) => {
   welcome();
   writeDescription(descriptionGame);
   const name = greet();
   for (let round = 1; round <= roundMax; round += 1) {
-    const [question, correctAnswerGame] = questionGame();
+    const [question, correctAnswerGame] = game();
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
     if (answer !== correctAnswerGame) {
@@ -36,6 +34,4 @@ const runGame = (descriptionGame, questionGame) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-export {
-  greet, getRandomInt, runGame,
-};
+export default runGame;

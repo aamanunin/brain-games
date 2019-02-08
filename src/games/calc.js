@@ -1,6 +1,5 @@
-import {
-  getRandomInt,
-} from '..';
+import runGame from '..';
+import getRandomInt from '../utils/random';
 
 const minNum = 1;
 const maxNum = 100;
@@ -28,9 +27,9 @@ const mathItUp = {
 
 const getAnswer = (operand, x, y) => mathItUp[operand](x, y);
 
-const descriptionCalc = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
-const gameCalc = () => {
+const game = () => {
   const x = getRandomInt(minNum, maxNum);
   const y = getRandomInt(minNum, maxNum);
   const operand = getRandomOperand();
@@ -39,4 +38,6 @@ const gameCalc = () => {
   return [questionCalc, correctAnswerCalc];
 };
 
-export { descriptionCalc, gameCalc };
+const play = runGame(description, game);
+
+export default play;
