@@ -2,7 +2,7 @@ import runGame from '..';
 import getRandomInt from '../utils';
 
 const minNum = -10;
-const maxNum = 100;
+const maxNum = 10;
 const isPrime = (num) => {
   let countDel = 0;
   for (let i = 1; i <= num; i += 1) {
