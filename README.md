@@ -13,4 +13,4 @@ Install and run brain-progression:
 [![asciicast](https://asciinema.org/a/hxLUyzjK1oRYAKHMIzunVzL0T.svg)](https://asciinema.org/a/hxLUyzjK1oRYAKHMIzunVzL0T)  
 
 Install and run brain-prime:  
-[![asciicast](https://asciinema.org/a/huFDzXL210YNdBroVmVGwv07N.svg)](https://asciinema.org/a/huFDzXL210YNdBroVmVGwv07N)
+[![asciicast](https://asciinema.org/a/fj9RBLoJdxiQkzXQgMrLlYkOd.svg)](https://asciinema.org/a/fj9RBLoJdxiQkzXQgMrLlYkOd)
