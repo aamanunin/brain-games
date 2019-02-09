@@ -10,4 +10,7 @@ Install and run brain-gcd:
 [![asciicast](https://asciinema.org/a/Sj8c8N4BP3PTAGquqyUHrsNH9.svg)](https://asciinema.org/a/Sj8c8N4BP3PTAGquqyUHrsNH9)  
 
 Install and run brain-progression:  
-[![asciicast](https://asciinema.org/a/hxLUyzjK1oRYAKHMIzunVzL0T.svg)](https://asciinema.org/a/hxLUyzjK1oRYAKHMIzunVzL0T)
+[![asciicast](https://asciinema.org/a/hxLUyzjK1oRYAKHMIzunVzL0T.svg)](https://asciinema.org/a/hxLUyzjK1oRYAKHMIzunVzL0T)  
+
+Install and run brain-prime:  
+[![asciicast](https://asciinema.org/a/huFDzXL210YNdBroVmVGwv07N.svg)](https://asciinema.org/a/huFDzXL210YNdBroVmVGwv07N)
