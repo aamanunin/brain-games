@@ -22,8 +22,8 @@ const game = () => {
       correctAnswer = String(x - y);
       break;
     case 3:
-      question = `${x} / ${y}`;
-      correctAnswer = String(x / y);
+      question = `${x} * ${y}`;
+      correctAnswer = String(x * y);
       break;
     default: break;
   }
