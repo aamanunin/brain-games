@@ -10,17 +10,17 @@ const description = 'What number is missing in the progression?';
 const game = () => {
   const startNum = getRandomInt(0, maxStartNum);
   const step = getRandomInt(1, maxStep);
-  const hiddenIndex = getRandomInt(0, maxIndex);
+  const hiddenElementIndex = getRandomInt(0, maxIndex);
   let question = '';
   for (let i = 0; i <= maxIndex; i += 1) {
-    if (i === hiddenIndex) {
+    if (i === hiddenElementIndex) {
       question += String('.. ');
     } else {
       question += String(`${startNum + step * i} `);
     }
   }
   question = question.trim();
-  const correctAnswer = String(startNum + step * hiddenIndex);
+  const correctAnswer = String(startNum + step * hiddenElementIndex);
   return [question, correctAnswer];
 };
 
