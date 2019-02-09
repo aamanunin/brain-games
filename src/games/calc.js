@@ -1,5 +1,5 @@
 import runGame from '..';
-import getRandomInt from '../random';
+import getRandomInt from '../utils';
 
 const minNum = 1;
 const maxNum = 100;
