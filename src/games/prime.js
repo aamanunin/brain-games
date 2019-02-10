@@ -5,7 +5,7 @@ const minNum = -10;
 const maxNum = 10;
 const isPrime = (num) => {
   if (num <= 1) return false;
-  for (let i = 2; i < num; i += 1) {
+  for (let i = 2; i <= Math.sqrt(num); i += 1) {
     if (num % i === 0) return false;
   }
 
